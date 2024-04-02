@@ -17,3 +17,4 @@ D:\DEV\c#\Rocket\PassIn\PassIn.Application\obj\Debug\net8.0\PassIn.Application.d
 D:\DEV\c#\Rocket\PassIn\PassIn.Application\obj\Debug\net8.0\refint\PassIn.Application.dll
 D:\DEV\c#\Rocket\PassIn\PassIn.Application\obj\Debug\net8.0\PassIn.Application.pdb
 D:\DEV\c#\Rocket\PassIn\PassIn.Application\obj\Debug\net8.0\ref\PassIn.Application.dll
+D:\DEV\c#\Rocket\PassIn\PassIn.Application\obj\Debug\net8.0\PassIn.Application.sourcelink.json
