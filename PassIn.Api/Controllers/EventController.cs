@@ -35,6 +35,8 @@ public class EventController : ControllerBase
 
     }
     [HttpGet("{id}")]
+    [ProducesResponseType(typeof(ResponseEventJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
     public IActionResult ListarEventos(Guid id)
     {
         try
