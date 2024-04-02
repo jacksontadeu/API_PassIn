@@ -37,10 +37,21 @@ public class EventController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult ListarEventos(Guid id)
     {
-        var useCase = new GetByIdUserCase();
+        try
+        {
+            var useCase = new GetByIdUserCase();
 
-        var response = useCase.Execute(id);
+            var response = useCase.Execute(id);
 
-        return Ok(response);
+            return Ok(response);
+        }
+        catch(PassInException ex)
+        {
+            return NotFound(new ResponseErrorJson(ex.Message));
+        }
+        catch
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, new ResponseErrorJson("Erro Desconhecido"));
+        }
     }
 }
