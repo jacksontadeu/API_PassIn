@@ -9,3 +9,4 @@ D:\DEV\c#\Rocket\PassIn\PassIn.Exceptions\obj\Debug\net8.0\PassIn.Exceptions.dll
 D:\DEV\c#\Rocket\PassIn\PassIn.Exceptions\obj\Debug\net8.0\refint\PassIn.Exceptions.dll
 D:\DEV\c#\Rocket\PassIn\PassIn.Exceptions\obj\Debug\net8.0\PassIn.Exceptions.pdb
 D:\DEV\c#\Rocket\PassIn\PassIn.Exceptions\obj\Debug\net8.0\ref\PassIn.Exceptions.dll
+D:\DEV\c#\Rocket\PassIn\PassIn.Exceptions\obj\Debug\net8.0\PassIn.Exceptions.sourcelink.json

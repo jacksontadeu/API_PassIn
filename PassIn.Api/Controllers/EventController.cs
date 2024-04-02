@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PassIn.Application.UseCases.Register;
 using PassIn.Communication.Requests;
 using PassIn.Communication.Responses;
+using PassIn.Exceptions;
 
 namespace PassIn.Api.Controllers;
 [Route("api/[controller]")]
@@ -22,7 +23,7 @@ public class EventController : ControllerBase
 
             return Created();
         }
-        catch(ArgumentException ex)
+        catch(PassInException ex)
         {
             return BadRequest(new ResponseErrorJson(ex.Message));
         }
