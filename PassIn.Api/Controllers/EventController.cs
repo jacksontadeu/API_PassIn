@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PassIn.Application.UseCases.GetById;
 using PassIn.Application.UseCases.Register;
 using PassIn.Communication.Requests;
 using PassIn.Communication.Responses;
@@ -12,7 +13,7 @@ public class EventController : ControllerBase
 {
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisterEventJson), StatusCodes.Status201Created)]
-    [ProducesResponseType(typeof(ResponseErrorJson),StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
     public IActionResult Register([FromBody] RequestEventJson request)
     {
         try
@@ -23,7 +24,7 @@ public class EventController : ControllerBase
 
             return Created(string.Empty, evento);
         }
-        catch(PassInException ex)
+        catch (PassInException ex)
         {
             return BadRequest(new ResponseErrorJson(ex.Message));
         }
@@ -31,11 +32,15 @@ public class EventController : ControllerBase
         {
             return StatusCode(StatusCodes.Status500InternalServerError, new ResponseErrorJson("Erro Desconhecido"));
         }
-        
+
     }
-    [HttpGet]
-    public IActionResult ListarEventos()
+    [HttpGet("{id}")]
+    public IActionResult ListarEventos(Guid id)
     {
-        return 
+        var useCase = new GetByIdUserCase();
+
+        var response = useCase.Execute(id);
+
+        return Ok(response);
     }
 }
