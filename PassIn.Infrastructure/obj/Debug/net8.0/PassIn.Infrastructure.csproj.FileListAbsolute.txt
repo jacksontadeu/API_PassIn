@@ -9,3 +9,5 @@ D:\DEV\c#\Rocket\PassIn\PassIn.Infrastructure\obj\Debug\net8.0\PassIn.Infrastruc
 D:\DEV\c#\Rocket\PassIn\PassIn.Infrastructure\obj\Debug\net8.0\refint\PassIn.Infrastructure.dll
 D:\DEV\c#\Rocket\PassIn\PassIn.Infrastructure\obj\Debug\net8.0\PassIn.Infrastructure.pdb
 D:\DEV\c#\Rocket\PassIn\PassIn.Infrastructure\obj\Debug\net8.0\ref\PassIn.Infrastructure.dll
+D:\DEV\c#\Rocket\PassIn\PassIn.Infrastructure\obj\Debug\net8.0\PassIn.Infrastructure.csproj.AssemblyReference.cache
+D:\DEV\c#\Rocket\PassIn\PassIn.Infrastructure\obj\Debug\net8.0\PassIn.Infrastructure.sourcelink.json
