@@ -19,9 +19,9 @@ public class EventController : ControllerBase
         {
             var usecase = new RegisterEventUseCase();
 
-            usecase.Execute(request);
+            var evento = usecase.Execute(request);
 
-            return Created();
+            return Created(string.Empty, evento);
         }
         catch(PassInException ex)
         {
@@ -32,5 +32,10 @@ public class EventController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, new ResponseErrorJson("Erro Desconhecido"));
         }
         
+    }
+    [HttpGet]
+    public IActionResult ListarEventos()
+    {
+        return 
     }
 }
