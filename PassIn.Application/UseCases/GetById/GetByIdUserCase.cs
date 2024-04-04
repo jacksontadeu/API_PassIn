@@ -16,7 +16,7 @@ public class GetByIdUserCase
 
         var evento = context.Events.FirstOrDefault(e=> e.Id == id);
 
-        if (evento is null) throw new PassInException("Evento não encontrado");
+        if (evento is null) throw new NotFoundException("Evento não encontrado");
 
         return new ResponseEventJson
         {

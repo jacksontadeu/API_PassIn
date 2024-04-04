@@ -33,8 +33,8 @@ public class RegisterEventUseCase
 
     private void Validate(RequestEventJson request)
     {
-        if (request.MaximumAttendees <= 0) throw new PassInException("Número de participantes inválido");
-        if (string.IsNullOrWhiteSpace(request.Title)) throw new PassInException("O Título é invalido");
-        if (string.IsNullOrWhiteSpace(request.Details)) throw new PassInException("O detalhe é inválido");
+        if (request.MaximumAttendees <= 0) throw new ErrorOnValidationException("Número de participantes inválido");
+        if (string.IsNullOrWhiteSpace(request.Title)) throw new ErrorOnValidationException("O Título é invalido");
+        if (string.IsNullOrWhiteSpace(request.Details)) throw new ErrorOnValidationException("O detalhe é inválido");
     }
 }
