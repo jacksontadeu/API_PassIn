@@ -6,9 +6,8 @@ using PassIn.Communication.Responses;
 using PassIn.Exceptions;
 
 namespace PassIn.Api.Controllers;
-[Route("api/[controller]")]
-[ApiController]
-public class EventController : ControllerBase
+
+public class EventController : DefaultController
 {
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisterEventJson), StatusCodes.Status201Created)]
