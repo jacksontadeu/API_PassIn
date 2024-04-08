@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PassIn.Application.UseCases.RegisterAttendee;
 using PassIn.Communication.Requests;
+using PassIn.Communication.Responses;
 
 namespace PassIn.Api.Controllers;
 
@@ -9,6 +10,10 @@ public class AttendeeController : DefaultController
 {
     [HttpPost]
     [Route("{eventId}")]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status409Conflict)]
 
     public IActionResult Register([FromBody] RequestRegisterEventJson request, [FromRoute]Guid eventId)
     {
@@ -18,4 +23,5 @@ public class AttendeeController : DefaultController
 
         return Created(string.Empty, response);
     }
+
 }

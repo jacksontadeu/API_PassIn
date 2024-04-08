@@ -3,7 +3,6 @@ using PassIn.Application.UseCases.GetById;
 using PassIn.Application.UseCases.Register;
 using PassIn.Communication.Requests;
 using PassIn.Communication.Responses;
-using PassIn.Exceptions;
 
 namespace PassIn.Api.Controllers;
 

@@ -1,12 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using PassIn.Communication.Requests;
+﻿using PassIn.Communication.Requests;
 using PassIn.Communication.Responses;
 using PassIn.Exceptions;
 using PassIn.Infrastructure;
 using PassIn.Infrastructure.Entities;
 using System.Net.Mail;
-using System.Runtime.CompilerServices;
 
 namespace PassIn.Application.UseCases.RegisterAttendee;
 public class RegisterAttendeeForEventUseCase
