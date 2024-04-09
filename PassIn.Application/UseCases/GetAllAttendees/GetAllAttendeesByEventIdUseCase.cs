@@ -3,7 +3,7 @@ using PassIn.Communication.Responses;
 using PassIn.Exceptions;
 using PassIn.Infrastructure;
 
-namespace PassIn.Application.UseCases;
+namespace PassIn.Application.UseCases.GetAllAttendees;
 public class GetAllAttendeesByEventIdUseCase
 {
     private readonly PassInDbContext _context;
@@ -28,7 +28,7 @@ public class GetAllAttendeesByEventIdUseCase
                 Name = at.Name,
                 Email = at.Email,
                 CreatedAt = at.Created_At,
-                
+
             }).ToList(),
         };
 

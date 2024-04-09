@@ -48,7 +48,7 @@ public class RegisterAttendeeForEventUseCase
 
         var attendeeAlreadyRegistered = _context.Attendees.Any(attendee => attendee.Email.Equals(request.Email));
         if (attendeeAlreadyRegistered)
-            throw new ErrorOnValidationException("Participante já logado no sistema");
+            throw new ConflictException("Participante já logado no sistema");
 
         var attendeeLogged = _context.Attendees.Count(at=> at.Event_Id == eventId);
         if (attendeeLogged >= eventExist.Maximum_Attendees)

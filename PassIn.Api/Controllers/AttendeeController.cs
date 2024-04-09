@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PassIn.Application.UseCases;
+using PassIn.Application.UseCases.GetAllAttendees;
 using PassIn.Application.UseCases.RegisterAttendee;
 using PassIn.Communication.Requests;
 using PassIn.Communication.Responses;
@@ -11,7 +12,7 @@ public class AttendeeController : DefaultController
 {
     [HttpPost]
     [Route("{eventId}")]
-    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ResponseAttendeeJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status409Conflict)]
@@ -26,7 +27,7 @@ public class AttendeeController : DefaultController
     }
     [HttpGet]
     [Route("{eventId}")]
-    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseAttendeeJson), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
     public IActionResult GetAllAttendees([FromRoute] Guid eventId)
     {
