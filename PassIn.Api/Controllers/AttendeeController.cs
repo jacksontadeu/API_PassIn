@@ -10,6 +10,12 @@ namespace PassIn.Api.Controllers;
 
 public class AttendeeController : DefaultController
 {
+    /// <summary>
+    /// Método usado para registar um paricipante no evento determinado pelo Id do evento.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <param name="eventId"></param>
+    /// <returns></returns>
     [HttpPost]
     [Route("{eventId}")]
     [ProducesResponseType(typeof(ResponseAttendeeJson), StatusCodes.Status201Created)]
@@ -25,6 +31,11 @@ public class AttendeeController : DefaultController
 
         return Created(string.Empty, response);
     }
+    /// <summary>
+    /// Método usado para listar todos os participantes do evento determinado pelo ID do evento.
+    /// </summary>
+    /// <param name="eventId"></param>
+    /// <returns></returns>
     [HttpGet]
     [Route("{eventId}")]
     [ProducesResponseType(typeof(ResponseAttendeeJson), StatusCodes.Status200OK)]

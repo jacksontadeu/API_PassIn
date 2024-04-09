@@ -8,6 +8,11 @@ namespace PassIn.Api.Controllers;
 
 public class EventController : DefaultController
 {
+    /// <summary>
+    /// Método utilizado para cadastrar um evento.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisterEventJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
@@ -21,6 +26,11 @@ public class EventController : DefaultController
         return Created(string.Empty, evento);
 
     }
+    /// <summary>
+    /// Método utilizado para listar evento determinado pelo ID do evento.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(ResponseEventJson), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]

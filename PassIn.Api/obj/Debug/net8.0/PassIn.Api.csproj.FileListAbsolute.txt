@@ -68,3 +68,5 @@ D:\DEV\c#\Rocket\PassIn\PassIn.Api\bin\Debug\net8.0\runtimes\win-arm\native\e_sq
 D:\DEV\c#\Rocket\PassIn\PassIn.Api\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 D:\DEV\c#\Rocket\PassIn\PassIn.Api\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\DEV\c#\Rocket\PassIn\PassIn.Api\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\DEV\c#\Rocket\PassIn\PassIn.Api\bin\Debug\net8.0\PassIn.Api.xml
+D:\DEV\c#\Rocket\PassIn\PassIn.Api\obj\Debug\net8.0\PassIn.Api.xml

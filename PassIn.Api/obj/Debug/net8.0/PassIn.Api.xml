@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PassIn.Api</name>
+    </assembly>
+    <members>
+        <member name="M:PassIn.Api.Controllers.AttendeeController.Register(PassIn.Communication.Requests.RequestRegisterEventJson,System.Guid)">
+            <summary>
+            Método usado para registar um paricipante no evento determinado pelo Id do evento.
+            </summary>
+            <param name="request"></param>
+            <param name="eventId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PassIn.Api.Controllers.AttendeeController.GetAllAttendees(System.Guid)">
+            <summary>
+            Método usado para listar todos os participantes do evento determinado pelo ID do evento.
+            </summary>
+            <param name="eventId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PassIn.Api.Controllers.CheckInController.CheckIn(System.Guid)">
+            <summary>
+            Método utilizado para realizar o checkin do participante do evento.
+            </summary>
+            <param name="attendeeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PassIn.Api.Controllers.EventController.Register(PassIn.Communication.Requests.RequestEventJson)">
+            <summary>
+            Método utilizado para cadastrar um evento.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PassIn.Api.Controllers.EventController.ListarEventos(System.Guid)">
+            <summary>
+            Método utilizado para listar evento determinado pelo ID do evento.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

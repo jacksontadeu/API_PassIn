@@ -8,6 +8,11 @@ namespace PassIn.Api.Controllers;
 
 public class CheckInController : DefaultController
 {
+    /// <summary>
+    /// Método utilizado para realizar o checkin do participante do evento.
+    /// </summary>
+    /// <param name="attendeeId"></param>
+    /// <returns></returns>
     
     [HttpPost]
     [Route("{attendeeId}")]
