@@ -2,20 +2,19 @@
 using PassIn.Communication.Responses;
 using PassIn.Exceptions;
 using PassIn.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PassIn.Application.UseCases.GetById;
 public class GetByIdUserCase
 {
-    public ResponseEventJson Execute(Guid id)
+    private readonly PassInDbContext _context;
+    public GetByIdUserCase()
     {
-        var context = new PassInDbContext();
-
-        var evento = context.Events.Include(evento => evento.Attendees).FirstOrDefault(e=> e.Id == id);
+        _context = new PassInDbContext();
+    }
+    public async Task<ResponseEventJson> Execute(Guid id)
+    {
+        
+        var evento = await _context.Events.Include(evento => evento.Attendees).FirstOrDefaultAsync(e=> e.Id == id);
 
         if (evento is null) throw new NotFoundException("Evento não encontrado");
 

@@ -13,7 +13,7 @@ public class CheckInUseCase
     {
         _context = new PassInDbContext();
     }
-    public ResponseRegisteredJson Execute(Guid attendeeId)
+    public async Task<ResponseRegisteredJson> ExecuteAsync(Guid attendeeId)
     {
         Validate(attendeeId);
 
@@ -22,8 +22,8 @@ public class CheckInUseCase
             Attendee_Id = attendeeId,
             Created_at = DateTime.UtcNow,
         };
-        _context.CheckIns.Add(entity);
-        _context.SaveChanges();
+        await _context.CheckIns.AddAsync(entity);
+        await _context.SaveChangesAsync();
         return new ResponseRegisteredJson
         {
             Id = entity.Id,

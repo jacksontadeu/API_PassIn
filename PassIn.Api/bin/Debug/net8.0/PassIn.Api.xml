@@ -4,7 +4,7 @@
         <name>PassIn.Api</name>
     </assembly>
     <members>
-        <member name="M:PassIn.Api.Controllers.AttendeeController.Register(PassIn.Communication.Requests.RequestRegisterEventJson,System.Guid)">
+        <member name="M:PassIn.Api.Controllers.AttendeeController.RegisterAsync(PassIn.Communication.Requests.RequestRegisterEventJson,System.Guid)">
             <summary>
             Método usado para registar um paricipante no evento determinado pelo Id do evento.
             </summary>

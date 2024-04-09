@@ -23,11 +23,11 @@ public class AttendeeController : DefaultController
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status409Conflict)]
 
-    public IActionResult Register([FromBody] RequestRegisterEventJson request, [FromRoute] Guid eventId)
+    public async Task<IActionResult> RegisterAsync([FromBody] RequestRegisterEventJson request, [FromRoute] Guid eventId)
     {
         var usecase = new RegisterAttendeeForEventUseCase();
 
-        var response = usecase.Execute(eventId, request);
+        var response = await usecase.ExecuteAsync(eventId, request);
 
         return Created(string.Empty, response);
     }

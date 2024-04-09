@@ -20,11 +20,11 @@ public class CheckInController : DefaultController
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status409Conflict)]
 
-    public IActionResult CheckIn([FromRoute]Guid attendeeId)
+    public async Task<IActionResult> CheckIn([FromRoute]Guid attendeeId)
     {
         var usecase = new CheckInUseCase();
 
-        var response = usecase.Execute(attendeeId);
+        var response = await usecase.ExecuteAsync(attendeeId);
 
         return Created(string.Empty, response);
     }

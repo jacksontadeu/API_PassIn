@@ -15,7 +15,7 @@ public class RegisterAttendeeForEventUseCase
         _context = new PassInDbContext();
     }
 
-    public ResponseAttendeeJson Execute(Guid eventId, RequestRegisterEventJson request)
+    public async Task<ResponseAttendeeJson> ExecuteAsync(Guid eventId, RequestRegisterEventJson request)
     {
         Validate(eventId, request);
 
@@ -26,8 +26,8 @@ public class RegisterAttendeeForEventUseCase
             Event_Id = eventId,
             Created_At = DateTime.UtcNow,
         };
-        _context.Attendees.Add(entity);
-        _context.SaveChanges();
+        await _context.Attendees.AddAsync(entity);
+        await _context.SaveChangesAsync();
         return new ResponseAttendeeJson
         {
             Id = entity.Id,

@@ -7,11 +7,15 @@ using PassIn.Infrastructure.Entities;
 namespace PassIn.Application.UseCases.Register;
 public class RegisterEventUseCase
 {
-    public ResponseRegisterEventJson Execute(RequestEventJson request)
+    private readonly PassInDbContext _context;
+    public RegisterEventUseCase()
+    {
+        _context = new PassInDbContext();
+    }
+    public async Task<ResponseRegisterEventJson> Execute(RequestEventJson request)
     {
         Validate(request);
-
-        var context = new PassInDbContext();
+        
         var evento = new Event
         {
             Title = request.Title,
@@ -20,8 +24,8 @@ public class RegisterEventUseCase
             Slug = request.Title.ToLower().Replace(" ", "-"),
         };
 
-        context.Events.Add(evento);
-        context.SaveChanges();
+        await _context.Events.AddAsync(evento);
+        await _context.SaveChangesAsync();
         return new ResponseRegisterEventJson
         {
             Id= evento.Id,

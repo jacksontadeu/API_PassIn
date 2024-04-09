@@ -16,12 +16,12 @@ public class EventController : DefaultController
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisterEventJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
-    public IActionResult Register([FromBody] RequestEventJson request)
+    public async Task<IActionResult> Register([FromBody] RequestEventJson request)
     {
 
         var usecase = new RegisterEventUseCase();
 
-        var evento = usecase.Execute(request);
+        var evento = await usecase.Execute(request);
 
         return Created(string.Empty, evento);
 
@@ -34,12 +34,12 @@ public class EventController : DefaultController
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(ResponseEventJson), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-    public IActionResult ListarEventos(Guid id)
+    public async Task<IActionResult> ListarEventos(Guid id)
     {
 
         var useCase = new GetByIdUserCase();
 
-        var response = useCase.Execute(id);
+        var response =  await useCase.Execute(id);
 
         return Ok(response);
 
